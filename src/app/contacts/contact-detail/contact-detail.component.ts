@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef } from '@angular/core';
 import { Contact } from '../contact.model';
 
 @Component({
@@ -8,12 +8,5 @@ import { Contact } from '../contact.model';
   styleUrl: './contact-detail.component.css',
 })
 export class ContactDetailComponent {
-  contact: Contact = new Contact(
-    10,
-    'John Doe',
-    'blah@blah.com',
-    '123-456-7890',
-    'https://via.placeholder.com/150',
-    null
-  );
+  @Input() selectedContact: Contact;
 }
